@@ -48,7 +48,9 @@ export class Command {
       type: "1",
       include_applications: "true",
     });
-    const url = `${this.config.DiscordBaseUrl}/api/v9/channels/${this.config.ChannelId}/application-commands/search?${searchParams}`;
+
+    const url = `${this.config.DiscordBaseUrl}/api/v9/channels/${this.config.ChannelId}/application-command-index`;
+    // const url = `${this.config.DiscordBaseUrl}/api/v9/channels/${this.config.ChannelId}/application-commands/search?${searchParams}`;
 
     const response = await this.config.fetch(url, {
       headers: { authorization: this.config.SalaiToken },
